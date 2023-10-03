@@ -1476,4 +1476,13 @@ a:focus {
   opacity: 1;
 }
 
+.dropdown {
+  display: none;
+ }
+
+ .show {
+  display: flex;
+  flex-direction: column;
+ }
+
 /*# sourceMappingURL=maps/style.css.map */

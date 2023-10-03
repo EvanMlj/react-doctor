@@ -4,11 +4,11 @@ import './assets/css/style.css';
 
 function App() {
   return (
-    <div className="App">
-      <body className='top'>
+    <div className="App top">
+     
       <HeaderComp></HeaderComp> 
       <PageTitle></PageTitle>
-      </body>
+     
     </div>
   );
 }
