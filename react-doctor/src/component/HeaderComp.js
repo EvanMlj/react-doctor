@@ -1,6 +1,12 @@
 import Logo from '../assets/images/logo.png'
 import NavBar from "./Navbar";
 
+/**
+ * Render the header component.
+ *
+ * @returns {JSX.Element} The rendered header component.
+ * @description This function renders the header component of the website. It includes information about the email address, address, and phone number. The header component consists of a top bar with contact information, a container with a logo and navigation bar.
+ */
 function HeaderComp() {
     return(
         <header>

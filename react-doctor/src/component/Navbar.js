@@ -1,6 +1,11 @@
 import { menuItems } from "../menuItems";
 import  MenuItems  from "./MenuItem";
 
+/**
+ * Renders the navigation bar.
+ *
+ * @return {JSX.Element} The navigation bar component.
+ */
 const NavBar = () => {
     return (
         <nav>

@@ -1480,9 +1480,9 @@ a:focus {
   display: none;
  }
 
- .show {
-  display: flex;
-  flex-direction: column;
- }
+.show {
+display: flex;
+flex-direction: column;
+}
 
 /*# sourceMappingURL=maps/style.css.map */
