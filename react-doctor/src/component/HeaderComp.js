@@ -1,4 +1,4 @@
-import Logo from '../assets/images/logo.png'
+
 import NavBar from "./Navbar";
 
 /**
@@ -32,8 +32,10 @@ function HeaderComp() {
                 </div>
             </div>
             <div className="nav-area">
-                <img src={Logo} alt='logo entreprise'/>
+                
+                
                 <NavBar/>
+                
             </div>
         </header>
     )

@@ -16,26 +16,31 @@ const MenuItem = ({ items }) => {
 
     return (
         // Render menu item element
-        <li className='menu-items'>
+        <li className='menu-items nav-item active'>
+            <div className='btn-group' role='group'>
             {items.submenu ? (
                 <>
                     {/* Render dropdown button */}
                     <button
                         type='button'
+                        id='dropdown02'
+                        data-toggle='dropdown'
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
                         onClick={() => setDropdown((prev) => !prev)}
+                        className={` btn nav-item nav-link dropdown-toggle${dropdown ? " active" : ""}`}
                     >
                         {/* Render menu item title */}
-                        {items.title}{' ↓'}
+                        {items.title}
                     </button>
                     {/* Render dropdown submenu */}
                     <Dropdown submenus={items.submenu} dropdown={dropdown} />
                 </>
             ) : (
                 // Render menu item link
-                <a href={items.url}>{items.title}</a>
+                <a href={items.url}  className="btn nav-item nav-link">{items.title}</a>
             )}
+            </div>
         </li>
     );
 }

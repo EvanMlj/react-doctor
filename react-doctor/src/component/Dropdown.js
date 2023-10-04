@@ -10,15 +10,14 @@ import React from 'react';
  */
 const Dropdown = ({ submenus, dropdown }) => {
     // Log a greeting message to the console
-    console.log("COUCOU EVAN");
 
     // Render the dropdown menu component
     return (
-        <ul className={`dropdown ${dropdown ? "show" : ""}`}>
+        <ul aria-labelledby='dropdown02' className={`dropdown-menu ${dropdown ? "show" : ""}`}>
             {/* Iterate over the submenus array and render each submenu */}
             {submenus.map((submenu, index) => (
                 <li key={index} className="menu-items">
-                    <a href={submenu.url}>{submenu.title}</a>
+                    <a className='dropdown-item' href={submenu.url}>{submenu.title}</a>
                 </li>
             ))}
         </ul>
