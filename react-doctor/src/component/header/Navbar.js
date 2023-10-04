@@ -1,6 +1,6 @@
-import { menuItems } from "../menuItems";
+import { menuItems } from "../../menuItems";
 import  MenuItems  from "./MenuItem";
-import Logo from '../assets/images/logo.png'
+import Logo from "../../assets/images/logo.png";
 
 /**
  * Renders the navigation bar.
@@ -9,7 +9,7 @@ import Logo from '../assets/images/logo.png'
  */
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navigation">
+        <nav className="navbar navbar-expand-lg navigation" id="navbar">
            <div className="container">
             <img src={Logo} alt='logo entreprise' className="navbar-brand img-fluid"/>
             <div className="collapse navbar-collapse" id="navbarmain">

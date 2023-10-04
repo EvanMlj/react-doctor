@@ -13,7 +13,7 @@ const Dropdown = ({ submenus, dropdown }) => {
 
     // Render the dropdown menu component
     return (
-        <ul aria-labelledby='dropdown02' className={`dropdown-menu ${dropdown ? "show" : ""}`}>
+        <ul aria-labelledby='dropdown02 dropdown-menu show' className={`dropdown-menu ${dropdown ? "show" : ""}`}>
             {/* Iterate over the submenus array and render each submenu */}
             {submenus.map((submenu, index) => (
                 <li key={index} className="menu-items">

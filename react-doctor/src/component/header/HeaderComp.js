@@ -1,5 +1,4 @@
-
-import NavBar from "./Navbar";
+import NavBar from './Navbar';
 
 /**
  * Render the header component.
@@ -32,10 +31,7 @@ function HeaderComp() {
                 </div>
             </div>
             <div className="nav-area">
-                
-                
                 <NavBar/>
-                
             </div>
         </header>
     )
