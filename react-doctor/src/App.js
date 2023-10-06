@@ -3,6 +3,7 @@ import PageTitle from './component/main/PageTitle';
 import About from './component/main/About';
 import Service from './component/main/Service';
 import Awards from './component/main/Awards';
+import Team from './component/main/Team';
 import './assets/icofont/icofont.css' ;
 import './assets/bootstrap/css/bootstrap.min.css' ;
 import './assets/css/style.css';
@@ -16,8 +17,10 @@ function App() {
       <About/>
       <Service/>
       <Awards/>
+	  <Team/>
+	  
 
-<section className="section team">
+{/* <section className="section team">
 	<div className="container">
 		<div className="row justify-content-center">
 			<div className="col-lg-6">
@@ -74,7 +77,7 @@ function App() {
 			</div>
 		</div>
 	</div>
-</section>
+</section> */}
 
 <section className="section testimonial">
 	<div className="container">
