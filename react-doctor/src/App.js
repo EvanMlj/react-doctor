@@ -2,6 +2,7 @@ import HeaderComp from './component/header/HeaderComp' ;
 import PageTitle from './component/main/PageTitle';
 import About from './component/main/About';
 import Service from './component/main/Service';
+import Awards from './component/main/Awards';
 import './assets/icofont/icofont.css' ;
 import './assets/bootstrap/css/bootstrap.min.css' ;
 import './assets/css/style.css';
@@ -14,51 +15,7 @@ function App() {
       <PageTitle/>
       <About/>
       <Service/>
-
-<section className="section awards">
-	<div className="container">
-		<div className="row align-items-center">
-			<div className="col-lg-4">
-				<h2 className="title-color">Our Doctors achievements </h2>
-				<div className="divider mt-4 mb-5 mb-lg-0"></div>
-			</div>
-			<div className="col-lg-8">
-				<div className="row">
-					<div className="col-lg-4 col-md-6 col-sm-6">
-						<div className="award-img">
-							<img src="images/about/3.png" alt="" className="img-fluid"/>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 col-sm-6">
-						<div className="award-img">
-							<img src="images/about/4.png" alt="" className="img-fluid"/>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 col-sm-6">
-						<div className="award-img">
-							<img src="images/about/1.png" alt="" className="img-fluid"/>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 col-sm-6">
-						<div className="award-img">
-							<img src="images/about/2.png" alt="" className="img-fluid"/>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 col-sm-6">
-						<div className="award-img">
-							<img src="images/about/5.png" alt="" className="img-fluid"/>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 col-sm-6">
-						<div className="award-img">
-							<img src="images/about/6.png" alt="" className="img-fluid"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+      <Awards/>
 
 <section className="section team">
 	<div className="container">
