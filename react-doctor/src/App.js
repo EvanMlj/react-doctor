@@ -3,6 +3,7 @@ import PageTitle from './component/main/PageTitle';
 import About from './component/main/About';
 import Service from './component/main/Service';
 import Awards from './component/main/Awards';
+import Team from './component/main/Team';
 import './assets/icofont/icofont.css' ;
 import './assets/bootstrap/css/bootstrap.min.css' ;
 import './assets/css/style.css';
@@ -11,70 +12,14 @@ import './assets/css/style.css';
 function App() {
   return (
     <div className="App top">
-      <HeaderComp/> 
-      <PageTitle/>
-      <About/>
-      <Service/>
-      <Awards/>
-
-<section className="section team">
-	<div className="container">
-		<div className="row justify-content-center">
-			<div className="col-lg-6">
-				<div className="section-title text-center">
-					<h2 className="mb-4">Meet Our Specialist</h2>
-					<div className="divider mx-auto my-4"></div>
-					<p>Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles</p>
-				</div>
-			</div>
-		</div>
-
-		<div className="row">
-			<div className="col-lg-3 col-md-6 col-sm-6">
-				<div className="team-block mb-5 mb-lg-0">
-					<img src="images/team/1.jpg" alt="" className="img-fluid w-100"/>
-
-					<div className="content">
-						<h4 className="mt-4 mb-0"><a href="doctor-single.html">John Marshal</a></h4>
-						<p>Internist, Emergency Physician</p>
-					</div>
-				</div>
-			</div>
-
-			<div className="col-lg-3 col-md-6 col-sm-6">
-				<div className="team-block mb-5 mb-lg-0">
-					<img src="images/team/2.jpg" alt="" className="img-fluid w-100"/>
-
-					<div className="content">
-						<h4 className="mt-4 mb-0"><a href="doctor-single.html">Marshal Root</a></h4>
-						<p>Surgeon, Сardiologist</p>
-					</div>
-				</div>
-			</div>
-
-			<div className="col-lg-3 col-md-6 col-sm-6">
-				<div className="team-block mb-5 mb-lg-0">
-					<img src="images/team/3.jpg" alt="" className="img-fluid w-100"/>
-
-					<div className="content">
-						<h4 className="mt-4 mb-0"><a href="doctor-single.html">Siamon john</a></h4>
-						<p>Internist, General Practitioner</p>
-					</div>
-				</div>
-			</div>
-			<div className="col-lg-3 col-md-6 col-sm-6">
-				<div className="team-block">
-					<img src="images/team/4.jpg" alt="" className="img-fluid w-100"/>
-
-					<div className="content">
-						<h4 className="mt-4 mb-0"><a href="doctor-single.html">Rishat Ahmed</a></h4>
-						<p>Orthopedic Surgeon</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+	<HeaderComp/> 
+	<PageTitle/>
+	<About/>
+	<Service/>
+	<Awards/>
+	<Team
+		title="Meet Our Specialist"
+		presentation="Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles"/>
 
 <section className="section testimonial">
 	<div className="container">
