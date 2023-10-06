@@ -1,4 +1,4 @@
-import { menuItems } from "../../menuItems";
+import { menuItems } from "../menuItems";
 import  MenuItems  from "./MenuItem";
 import Logo from "../../assets/images/logo.png";
 

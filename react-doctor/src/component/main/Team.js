@@ -4,6 +4,9 @@ import JohnMarshal from "../../assets/images/team/1.jpg";
 import MarshalRoot from "../../assets/images/team/2.jpg";
 import Siamonjohn from "../../assets/images/team/3.jpg";
 import Rishat from "../../assets/images/team/4.jpg";
+import Anna from "../../assets/images/team/anna.png" ;
+import Souad from "../../assets/images/team/Souad.png";
+import Pataton from "../../assets/images/team/pataton.png";
 
 function Team({title, presentation}){
     const donnesTeam=[
@@ -27,6 +30,21 @@ function Team({title, presentation}){
             title : "Rishat Ahmed",  
             message : "Orthopedic Surgeon",
         },
+        {
+            url : Anna,
+            title : "Anna Yang",  
+            message : "Chief Cardiac Surgeon",
+        },
+        {
+            url : Souad,
+            title: "Souad Bailey",
+            message: "Generalist Surgeon"
+        },
+        {   
+            url : Pataton,
+            title : "Pataton Webber",
+            message : "Chirurchien of Surgery"
+        }
     ]
 
     return(
