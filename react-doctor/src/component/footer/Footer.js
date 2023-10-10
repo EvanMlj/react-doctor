@@ -74,6 +74,20 @@ function Footer(){
             ]
         }
     ]
+	const getIntouch = [
+		{
+			icon : "icofont-email",
+			info : "Support Available for 24/7",
+			contactInfo : "support@novena.com",
+			link : "mailto:support@novena.com"
+		},
+		{
+			icon : "iconfont-support",
+			info : "Mon to Fri : 08:30 - 18:00",
+			contactInfo : "823-4565-13456",
+			link : "tel:+23-456-6588"
+		}
+	]
     return(
 <footer className="footer section gray-bg">
 	<div className="container">
@@ -86,63 +100,47 @@ function Footer(){
 					<p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.</p>
 
 					<ul className="list-inline footer-socials mt-4">
-						<li className="list-inline-item"><a href="https://www.facebook.com/themefisher"><i className="icofont-facebook"></i></a></li>
-						<li className="list-inline-item"><a href="https://twitter.com/themefisher"><i className="icofont-twitter"></i></a></li>
-						<li className="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i className="icofont-linkedin"></i></a></li>
+						{socialMedia.map((social, index) => (
+							<li className="list-inline-item" key={index}><a href={social.url}><i className={social.icone}></i></a></li>
+							))}
 					</ul>
 				</div>
 			</div>
 
-			<div className="col-lg-2 col-md-6 col-sm-6">
-				<div className="widget mb-5 mb-lg-0">
-					<h4 className="text-capitalize mb-3">Department</h4>
-					<div className="divider mb-4"></div>
+			{ footerLinks.map((links, index) => (
+				<div className="col-lg-2 col-md-6 col-sm-6" key={index}>
+					<div className="widget mb-5 mb-lg-0">
+						<h4 className="text-capitalize mb-3">{links.title}</h4>
+						<div className="divider mb-4"></div>
+						
+					</div>
 
-					<ul className="list-unstyled footer-menu lh-35">
-						<li><a href="/">Surgery </a></li>
-						<li><a href="/">Wome's Health</a></li>
-						<li><a href="/">Radiology</a></li>
-						<li><a href="/">Cardioc</a></li>
-						<li><a href="/">Medicine</a></li>
-					</ul>
+					{links.submenu.map((submenu, index) => (
+						<ul className="list-unstyled footer-menu lh-35" key={index}>
+							<li>
+								<a href={submenu.url}>{submenu.title}</a>
+							
+							</li>
+							</ul>
+					))}
+					
 				</div>
-			</div>
-
-			<div className="col-lg-2 col-md-6 col-sm-6">
-				<div className="widget mb-5 mb-lg-0">
-					<h4 className="text-capitalize mb-3">Support</h4>
-					<div className="divider mb-4"></div>
-
-					<ul className="list-unstyled footer-menu lh-35">
-						<li><a href="/">Terms & Conditions</a></li>
-						<li><a href="/">Privacy Policy</a></li>
-						<li><a href="/">Company Support </a></li>
-						<li><a href="/">FAQuestions</a></li>
-						<li><a href="/">Company Licence</a></li>
-					</ul>
-				</div>
-			</div>
+			))}
 
 			<div className="col-lg-3 col-md-6 col-sm-6">
 				<div className="widget widget-contact mb-5 mb-lg-0">
 					<h4 className="text-capitalize mb-3">Get in Touch</h4>
 					<div className="divider mb-4"></div>
 
-					<div className="footer-contact-block mb-4">
-						<div className="icon d-flex align-items-center">
-							<i className="icofont-email mr-3"></i>
-							<span className="h6 mb-0">Support Available for 24/7</span>
+					{getIntouch.map((info, index) => (
+						<div className="media mb-4" key={index}>
+							<i className={info.icon}></i>
+							<div className="media-body ml-3">
+								<h6 className="text-capitalize mb-1">{info.info}</h6>
+								<a href={info.link}>{info.contactInfo}</a>
+							</div>
 						</div>
-						<h4 className="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
-					</div>
-
-					<div className="footer-contact-block">
-						<div className="icon d-flex align-items-center">
-							<i className="icofont-support mr-3"></i>
-							<span className="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
-						</div>
-						<h4 className="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
-					</div>
+					))}
 				</div>
 			</div>
 		</div>
