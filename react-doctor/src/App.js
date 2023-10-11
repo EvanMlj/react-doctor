@@ -1,30 +1,43 @@
-import HeaderComp from './component/header/HeaderComp' ;
-import PageTitle from './component/main/PageTitle';
-import About from './component/main/About';
-import Service from './component/main/Service';
-import Awards from './component/main/Awards';
-import Team from './component/main/Team';
-import Testimonial from './component/main/Testimonial';
-import Footer from './component/footer/Footer';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import './assets/css/style.css';
+import "../node_modules/slick-carousel/slick/slick.css";
+import "../node_modules/slick-carousel/slick/slick-theme.css";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom" ;
+import Layout from "./pages/Layout";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import "./assets/css/style.css";
 
 
 function App() {
+
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Layout />,
+  //   },
+  //   {
+  //     path: "/home",
+  //     element: <Home />,
+  //   },
+  //   {
+  //     path: "/about",
+  //     element: <About />,
+  //   },
+  // ]);
+
   return (
     <div className="App top">
-	<HeaderComp/> 
-	<PageTitle/>
-	<About/>
-	<Service/>
-	<Awards/>
-	<Team
-		title="Meet Our Specialist"
-		presentation="Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles"/>
-	<Testimonial/>
-{/* <!-- footer Start --> */}
-	<Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

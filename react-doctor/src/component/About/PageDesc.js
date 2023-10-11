@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../Section";
 import SignImg from '../../assets/images/about/sign.png' ;
 
-function About() {
+function PageDesc() {
 
     return(
 
@@ -21,4 +21,4 @@ function About() {
     )
 }
 
-export default About ; 
+export default PageDesc ; 
