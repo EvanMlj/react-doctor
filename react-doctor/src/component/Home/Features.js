@@ -17,7 +17,7 @@ export default function Features(){
             
         },
         {
-            icon : "iconfont-ui-clock",
+            icon : "icofont-ui-clock",
             span : "Timing schedule",
             title : "Online Appointement",
             message : "Working Hours",
@@ -37,7 +37,7 @@ export default function Features(){
             ]
         },
         {
-            icon : "iconfont-support",
+            icon : "icofont-support",
             span : "Emergency Cases",
             title : "1-800-123-456",
             message : "Get ALl time support for emergency.We have introduced the principle of family medicine.Get Conneted with us for any urgency."
