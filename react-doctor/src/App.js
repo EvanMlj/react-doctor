@@ -8,25 +8,11 @@ import {
 import Layout from "./pages/Layout";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
+import "./assets/icofont/icofont.min.css"
 import "./assets/css/style.css";
 
 
 function App() {
-
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Layout />,
-  //   },
-  //   {
-  //     path: "/home",
-  //     element: <Home />,
-  //   },
-  //   {
-  //     path: "/about",
-  //     element: <About />,
-  //   },
-  // ]);
 
   return (
     <div className="App top">

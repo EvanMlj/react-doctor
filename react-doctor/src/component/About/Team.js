@@ -18,7 +18,7 @@ function Team({title, presentation}){
         {
             url : MarshalRoot,
             title : "Marshal Root",  
-            message : "Surgeon, Сardiologist",
+            message : "Surgeon, Cardiologist",
         },
         {
             url : Siamonjohn,

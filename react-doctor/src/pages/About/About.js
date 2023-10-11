@@ -13,7 +13,9 @@ export default function About(){
             <Service />
             <PageDesc />
             <Awards />
-            <Team />
+            <Team 
+                title="Meet Our Specialist"
+                presentation="Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles" />
             <Testimonial />
         </div>
     )
