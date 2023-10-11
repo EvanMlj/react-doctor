@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css' ;
 import './assets/css/style.css';
-import '../node_modules/slick-carousel/slick/slick.css'; 
-import '../node_modules/slick-carousel/slick/slick-theme.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

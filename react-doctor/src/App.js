@@ -4,7 +4,6 @@ import About from './component/main/About';
 import Service from './component/main/Service';
 import Awards from './component/main/Awards';
 import Team from './component/main/Team';
-import Testimonial from './component/main/Testimonial';
 import Footer from './component/footer/Footer';
 import './assets/icofont/icofont.css' ;
 import './assets/bootstrap/css/bootstrap.min.css' ;
@@ -22,8 +21,8 @@ function App() {
 	<Team
 		title="Meet Our Specialist"
 		presentation="Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles"/>
-	<Testimonial/>
-{/* <section className="section testimonial">
+
+<section className="section testimonial">
 	<div className="container">
 		<div className="row">
 			<div className="col-lg-6 offset-lg-6">
@@ -93,7 +92,7 @@ function App() {
 			</div>
 		</div>
 	</div>
-</section> */}
+</section>
 {/* <!-- footer Start --> */}
 	<Footer/>
     </div>
