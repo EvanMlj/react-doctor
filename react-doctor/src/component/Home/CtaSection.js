@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../Section";
-
+import CountUp from 'react-countup' ; 
 
 export default function CtaSection(){
     
@@ -8,19 +8,19 @@ export default function CtaSection(){
         {
             icon : "icofont-doctor",
             span : 58,
-            span2 : "k",
+            span2 : " k",
             message :"Happy People",
         },
         {
             icon : "icofont-flag",
             span : 700,
-            span2 : "+",
+            span2 : " +",
             message :"Surgery Comepleted",
         },
         {
             icon : "icofont-badge",
             span : 40,
-            span2 : "+",
+            span2 : " +",
             message :"Expert Doctors",
             
         },
@@ -40,8 +40,12 @@ export default function CtaSection(){
                             <div className="col-lg-3 col-md-6 col-sm-6" key={index}>
                                 <div className="counter-stat">
                                     <i className={cta.icon}></i>
-                                    <span className="h3">{cta.span}</span> {cta.span2}
-                                    <p>{cta.message}</p>
+                                    <span className="h3">
+                                    <CountUp end={cta.span} />
+                                    </span> {cta.span2}
+                                    
+                                    
+                                    <p>{cta.message}</p> 
                                 </div>
                             </div>
                         ))}
