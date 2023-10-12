@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./assets/icofont/icofont.min.css"
 import "./assets/css/style.css";
+import "./assets/bootstrap/css/bootstrap.min.css"
 
 
 function App() {

@@ -44,7 +44,7 @@ export default function Features(){
         }
     ]
     return(
-        <Section className="feature">
+        <Section className="features">
         <div className="row">
             <div className="col-lg-12">
             <div className="feature-block d-lg-flex">
