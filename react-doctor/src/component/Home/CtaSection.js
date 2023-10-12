@@ -39,11 +39,12 @@ export default function CtaSection(){
                         {donneesCtaSection.map((cta, index) =>(
                             <div className="col-lg-3 col-md-6 col-sm-6" key={index}>
                                 <div className="counter-stat">
+                                    
                                     <i className={cta.icon}></i>
                                     <span className="h3">
                                     <CountUp end={cta.span} />
-                                    </span> {cta.span2}
-                                    
+                                    </span>
+                                    {cta.span2}
                                     
                                     <p>{cta.message}</p> 
                                 </div>
