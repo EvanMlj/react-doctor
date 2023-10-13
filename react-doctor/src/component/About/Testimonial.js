@@ -1,5 +1,5 @@
 import Section from "../Section"
-import TestimonialCarousel from "../Carousel";
+import Carousel from "../Carousel";
 function Testimonial(){
     const donnnesTestimonial=[
         {
@@ -40,7 +40,9 @@ function Testimonial(){
         </div>
         <div className="row align-items-center">
         <div className="col-lg-6 testimonial-wrap offset-lg-6">
-            <TestimonialCarousel data={donnnesTestimonial} />
+            <Carousel
+                items={donnnesTestimonial}
+            />
         </div>
         </div>
         </Section>
