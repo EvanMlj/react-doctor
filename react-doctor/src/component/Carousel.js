@@ -99,7 +99,6 @@ const Carousel = ({ items }) => {
         },
       ],
     },
-    
     4: {
       slidesToShow: 2,
       slidesToScroll: 2,
@@ -142,7 +141,6 @@ const Carousel = ({ items }) => {
       ],
     },
   };
-
   return settingsMap[numberOfProperties] || null; // Default settings if not found
 };
 
@@ -154,8 +152,8 @@ const Carousel = ({ items }) => {
       return null;
     }
 
-    if (numberOfProperties === 1){
-      return (
+    const sliderRenderers = {
+      1: (settings, items) => (
         <Slider {...settings}>
           {items.map((item, index) => (
             <div className="client-thumb" key={index}>
@@ -163,11 +161,8 @@ const Carousel = ({ items }) => {
             </div>
           ))}
         </Slider>
-      )
-    }
-    else if (numberOfProperties === 3) {
-      return (
-
+      ),
+      3: (settings, items) => (
         <Slider {...settings}>
           {items.map((item, index) => (
             <div className="testimonial-block" key={index}>
@@ -175,25 +170,20 @@ const Carousel = ({ items }) => {
                 <h4>{item.title}</h4>
                 <span>{item.author}</span>
               </div>
-              <p>
-                {item.message}
-              </p>
+              <p>{item.message}</p>
               <i className="icofont-quote-right"></i>
             </div>
           ))}
         </Slider>
-      );
-    } else if (numberOfProperties === 4) {
-      return (
+      ),
+      4: (settings, items) => (
         <Slider {...settings}>
-          {items.map((item,index) => (
+          {items.map((item, index) => (
             <div className="testimonial-block style-2 gray-bg" key={index}>
               <i className="icofont-quote-right"></i>
-
               <div className="testimonial-thumb">
                 <img src={item.img} alt="doctor portrait" className="img-fluid" />
               </div>
-
               <div className="client-info">
                 <h4>{item.title}</h4>
                 <span>{item.author}</span>
@@ -202,145 +192,15 @@ const Carousel = ({ items }) => {
             </div>
           ))}
         </Slider>
-      )
- 
-};
-
+      ),
+    };
+    
+    const renderedSlider = sliderRenderers[numberOfProperties](settings, items);
+    
+    if (!renderedSlider) {
+      return null;
+    }
+    
+    return renderedSlider;
 }
-
 export default Carousel;
-
-
-// const getCarouselSettings = (numberOfProperties) => {
-//   if(numberOfProperties === 1){
-
-//   }
-// }
-
-  // const settingsTestimonialHome = {
-  //   slidesToShow: 2,
-  // slidesToScroll: 2,
-  // infinite: true,
-  // dots: true,
-  // arrows:false,
-  // autoplay: true,
-  // autoplaySpeed: 6000,
-  // responsive: 
-  // [
-  //   {
-  //     breakpoint: 1024,
-  //     settings: {
-  //       slidesToShow:2,
-  //       slidesToScroll:2,
-  //       infinite: true,
-  //       dots: true
-  //     }
-  //   },
-  //   {
-  //     breakpoint: 900,
-  //     settings: {
-  //       slidesToShow: 1,
-  //       slidesToScroll: 1
-  //     }
-  //   },{
-  //     breakpoint: 600,
-  //     settings: {
-  //       slidesToShow: 1,
-  //       slidesToScroll: 1
-  //     }
-  //   },
-  //   {
-  //     breakpoint: 480,
-  //     settings: {
-  //       slidesToShow: 1,
-  //       slidesToScroll: 1
-  //     }
-  //   }
-  // ]
-  // };
-
-//   const settingsTestimonialAbout = {
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     infinite: true,
-//     dots: true,
-//     arrows: false,
-//     autoplay: true,
-//     vertical: true,
-//     verticalSwiping: true,
-//     autoplaySpeed: 6000,
-//     responsive: 
-//     [
-//       {
-//         breakpoint: 1024,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//           infinite: true,
-//           dots: true,
-//         },
-//       },
-//       {
-//         breakpoint: 900,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//         },
-//       },
-//       {
-//         breakpoint: 600,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//         },
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//         },
-//       },
-//     ],
-//   };
-
-//   const settingsClient = {
-//     infinite: true,
-//   arrows: false,
-//   autoplay: true,
-//   slidesToShow: 6,
-//   slidesToScroll: 6,
-//   autoplaySpeed: 6000,
-//   responsive: 
-//   [
-//     {
-//       breakpoint: 1024,
-//       settings: {
-//         slidesToShow:6,
-//         slidesToScroll: 6,
-//         infinite: true,
-//         dots: true
-//       }
-//     },
-//     {
-//       breakpoint: 900,
-//       settings: {
-//         slidesToShow:4,
-//         slidesToScroll: 4
-//       }
-//     },{
-//       breakpoint: 600,
-//       settings: {
-//         slidesToShow: 4,
-//         slidesToScroll: 4
-//       }
-//     },
-//     {
-//       breakpoint: 480,
-//       settings: {
-//         slidesToShow: 2,
-//         slidesToScroll: 2
-//       }
-//     }
-//   ]
-//   };

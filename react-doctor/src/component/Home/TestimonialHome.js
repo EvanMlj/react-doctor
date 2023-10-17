@@ -33,6 +33,12 @@ export default function TestimonialHome(){
             author : "Partho Sarothi" ,
             message : "They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. " , 
         },
+        {
+            img : thumb3 ,
+            title : "Good Support!" ,
+            author : "Kolis Mullar" ,
+            message : "They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. " , 
+        },
     ]
 
     return(

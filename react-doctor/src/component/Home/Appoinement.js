@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "../Section";
 import ImgForm from "../../assets/images/about/img-3.jpg"
+import { SimpleInput } from "../SimpleInput";
 
 export default function Appoinement(){
     
@@ -19,7 +20,8 @@ export default function Appoinement(){
 				<div className="appoinment-wrap mt-5 mt-lg-0">
 					<h2 className="mb-2 title-color">Book appoinment</h2>
 					<p className="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-					<form id="/" className="appoinment-form" method="post" action="/">
+                    <SimpleInput/>
+					{/* <form id="/" className="appoinment-form" method="post" action="/">
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="form-group">
@@ -78,7 +80,7 @@ export default function Appoinement(){
                     </div>
 
                     <a className="btn btn-main btn-round-full" href="appoinment.html" >Make Appoinment <i className="icofont-simple-right ml-2  "></i></a>
-                </form>
+                </form> */}
             </div>
 			</div>
 		</div>
