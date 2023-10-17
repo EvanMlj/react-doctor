@@ -4,6 +4,7 @@ import Section from "../../component/Section";
 import CtaSection from "../../component/Home/CtaSection";
 import ServiceHome from "../../component/Home/ServiceHome";
 import Appointement from "../../component/Home/Appoinement";
+import TestimonialHome from "../../component/Home/TestimonialHome";
 import HomeImg from "../../assets/images/about/img-1.jpg"
 import HomeImg2 from "../../assets/images/about/img-2.jpg"
 import HomeImg3 from "../../assets/images/about/img-3.jpg"
@@ -62,6 +63,7 @@ export default function Home(){
             <CtaSection/>
             <ServiceHome/>
             <Appointement/>
+            <TestimonialHome/>
         </div>
     );
 }

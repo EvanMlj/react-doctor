@@ -149,48 +149,64 @@ const Carousel = ({ items }) => {
     const settings = getCarouselSettings(numberOfProperties) ;
     console.log(settings) ;
     console.log(numberOfProperties) ;
+
     if(!settings){
       return null;
     }
 
-  return (
+    if (numberOfProperties === 1){
+      return (
+        <Slider {...settings}>
+          {items.map((item, index) => (
+            <div className="client-thumb" key={index}>
+              <img src={item.img} alt="clients-logo" className="img-fluid" />
+            </div>
+          ))}
+        </Slider>
+      )
+    }
+    else if (numberOfProperties === 3) {
+      return (
 
-    <Slider {...settings}>
-      {items.map((item, index) => (
-        <div key={index} className={settings.slidesToShow === 2 ? "testimonial-block style-2 gray_bg" : "testimonial-block"}>
-          {settings.slidesToShow === 2 ? (
-            <>
-              <i className="iconfont-quote-right"></i>
+        <Slider {...settings}>
+          {items.map((item, index) => (
+            <div className="testimonial-block" key={index}>
+              <div className="client-info">
+                <h4>{item.title}</h4>
+                <span>{item.author}</span>
+              </div>
+              <p>
+                {item.message}
+              </p>
+              <i className="icofont-quote-right"></i>
+            </div>
+          ))}
+        </Slider>
+      );
+    } else if (numberOfProperties === 4) {
+      return (
+        <Slider {...settings}>
+          {items.map((item,index) => (
+            <div className="testimonial-block style-2 gray-bg" key={index}>
+              <i className="icofont-quote-right"></i>
+
               <div className="testimonial-thumb">
                 <img src={item.img} alt="doctor portrait" className="img-fluid" />
               </div>
+
               <div className="client-info">
                 <h4>{item.title}</h4>
                 <span>{item.author}</span>
+                <p>{item.message}</p>
               </div>
-              <p>{item.message}</p>
-            </>
-          ) : settings.slidesToShow === 1 ? (
-            <>
-              <div className="client-thumb">
-                <img src="images/about/1.png" alt="" className="img-fluid" />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="client-info">
-                <h4>{item.title}</h4>
-                <span>{item.author}</span>
-              </div>
-              <p>{item.message}</p>
-              <i className="icofont-quote-right"></i>
-            </>
-          )}
-        </div>
-      ))}
-    </Slider>
-  );
+            </div>
+          ))}
+        </Slider>
+      )
+ 
 };
+
+}
 
 export default Carousel;
 
