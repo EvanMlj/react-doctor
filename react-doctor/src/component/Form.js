@@ -2,6 +2,23 @@
 import useInput from "../hooks/use-input";
 
 export const Form = (props) => {
+
+    const donnesSelectInput = [
+        {value: 
+            [
+                'Choose Department',
+                'Choose Doctors'
+            ]
+        },
+        {value: 'Software Design' },
+        {value: 'Development cycle' },
+        {value: 'Software Development' },
+        {value: 'Maintenance'},
+        {value: 'Process Query' },
+        {value: 'Cost and Duration' },
+        {value: 'Modal Delivery'}
+    ]
+
     const { 
             value: enteredName, 
             isValid: enteredNameIsValid,
@@ -50,6 +67,41 @@ export const Form = (props) => {
     return (
         <form onSubmit={formSubmissionHandler} className="appointment-form">
             <div className="row">
+                <div className="col-lg-6">
+                    <div className="form-group">
+                        <select className="form-control" id="exampleFormControlSelect1">
+                            <option value={donnesSelectInput[0].value[0]}>{donnesSelectInput[0].value[0]}</option>
+                            {donnesSelectInput.slice(1).map((value, index) => (
+                                <option key={index} value={value.value}>{value.value}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div className="form-group">
+                        <select className="form-control" id="exampleFormControlSelect2">
+                            <option value={donnesSelectInput[0].value[1]}>{donnesSelectInput[0].value[1]}</option>
+                            {donnesSelectInput.slice(1).map((value, index) => (
+                                <option key={index} value={value.value}>{value.value}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div className="form-group">
+                        <input name="date" id="date" type="date" className="form-control" placeholder="dd/mm/yyyy"/>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div className="form-group">
+                        <input name="time" id="time" type="text" className="form-control" placeholder="Time"/>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div className="form-group">
+                        <input name="phone" id="phone" type="Number" className="form-control" placeholder="Phone Number"/>
+                    </div>
+                </div>
                 <div className="col-lg-6">
                     {nameInputHasError &&
                     <p className="alert alert-danger">Name must not be empty</p>}
