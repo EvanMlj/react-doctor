@@ -41,7 +41,7 @@ export default function CtaSection(){
                                 <div className="counter-stat">
                                     
                                     <i className={cta.icon}></i>
-                                    <CountUp end={cta.span} suffix={cta.span2} enableScrollSpy="true" scrollSpyDelay="1000" />
+                                    <CountUp end={cta.span} suffix={cta.span2} enableScrollSpy="true" scrollSpyDelay="500" />
                                     <p>{cta.message}</p>
                                 </div>
                             </div>
