@@ -1,6 +1,7 @@
 
 import useInput from "../hooks/use-input";
 
+
 const isNotEmpty = value => value.trim() !== '' ;
 const isDate = value => 
     {
@@ -17,6 +18,11 @@ const isPhoneNumber = value => {
 const isSelecteOption = value => {
     return value !== 'Choose Department' && value !== 'Choose Doctors'
 }
+const isTime = value => {
+    const [hour, minute] =value.split(':').map(Number);
+    return minute === 0 || minute === 30 ; 
+}
+
 
 export const Form = (props) => {
 
@@ -96,10 +102,25 @@ export const Form = (props) => {
         reset : resetDoctorInput
     } = useInput(isSelecteOption) ;
 
+    const {
+        value : enteredTime,
+        isValid : enteredTimeIsValid,
+        hasError : timeInputHasError,
+        valueChangerHandler : timeChangeHandler,
+        inputBlurHandler : timeBlurHandler,
+        reset : resetTimeInput
+    } = useInput(isTime) ;
+
     let formIsValid = false ;
 
 
-    if(enteredNameIsValid && enteredMessageIsValid && enteredDateIsValid && enteredPhoneIsValid && formIsValid && enteredDepartementIsValid && enteredDoctorIsValid) {
+    if(enteredNameIsValid 
+    && enteredMessageIsValid 
+    && enteredDateIsValid 
+    && enteredPhoneIsValid 
+    && enteredTimeIsValid 
+    && enteredDepartementIsValid 
+    && enteredDoctorIsValid) {
         formIsValid = true ;
     }
 
@@ -116,6 +137,9 @@ export const Form = (props) => {
         resetPhoneInput() ;
         resetDepartementInput() ;
         resetDoctorInput() ;
+        resetDepartementInput() ;
+        resetDoctorInput() ;
+        resetTimeInput() ;
     } ;
 
 
@@ -135,12 +159,30 @@ export const Form = (props) => {
     ? 'alert alert-danger form-control'
     : 'form-control'  ;
 
+    const timeInputClasses =  timeInputHasError
+    ? 'alert alert-danger form-control'
+    : 'form-control'  ;
+
+    const departementInputClasses =  departementInputHasError
+    ? 'alert alert-danger form-control'
+    : 'form-control'  ;
+
+    const doctorInputClasses =  doctorInputHasError
+    ? 'alert alert-danger form-control'
+    : 'form-control'  ;
+
     return (
         <form onSubmit={formSubmissionHandler} className="appointment-form">
             <div className="row">
                 <div className="col-lg-6">
                     <div className="form-group">
-                        <select className="form-control" id="exampleFormControlSelect1">
+                        { departementInputHasError && <p className="alert alert-danger">Please select a department</p>}
+                        <select 
+                        className={departementInputClasses} 
+                        id="exampleFormControlSelect1"
+                        value={enteredDepartement}
+                        onChange={departementChangeHandler}
+                        onBlur={departementBlurHandler}>
                             <option value={donnesSelectInput[0].value[0]}>{donnesSelectInput[0].value[0]}</option>
                             {donnesSelectInput.slice(1).map((value, index) => (
                                 <option key={index} value={value.value}>{value.value}</option>
@@ -150,7 +192,13 @@ export const Form = (props) => {
                 </div>
                 <div className="col-lg-6">
                     <div className="form-group">
-                        <select className="form-control" id="exampleFormControlSelect2">
+                        { doctorInputHasError && <p className="alert alert-danger">Please select a doctor</p>}
+                        <select 
+                        className={doctorInputClasses} 
+                        id="exampleFormControlSelect2"
+                        value={enteredDoctor}
+                        onChange={doctorChangeHandler}
+                        onBlur={doctorBlurHandler}>
                             <option value={donnesSelectInput[0].value[1]}>{donnesSelectInput[0].value[1]}</option>
                             {donnesSelectInput.slice(1).map((value, index) => (
                                 <option key={index} value={value.value}>{value.value}</option>
@@ -175,18 +223,22 @@ export const Form = (props) => {
                 </div>
                 <div className="col-lg-6">
                     <div className="form-group">
-
-                        <input 
+                        {timeInputHasError && (
+                            <p className="alert alert-danger">Please select a time in 30-minute intervals</p>
+                        )}
+                            
+                        <input
                         name="time" 
                         id="time" 
                         type="time" 
                         min="09:00" 
-                        max="17:00" 
-                        className="form-control" 
-                        value={enteredDate}
-                        onChange={dateChangeHandler && <small className="form-control alert-info">Open from 9:00 to 17:00</small>}
-                        onBlur={dateBlurHandler}
+                        max="17:00"
+                        className={timeInputClasses} 
+                        value={enteredTime}
+                        onChange={timeChangeHandler}
+                        onBlur={timeBlurHandler}
                         placeholder="Time" />
+                        <label htmlfor="time" className="form-control alert-info">Open from 9:00 to 17:00</label>
                     </div>
                 </div>
                 <div className="col-lg-6">
