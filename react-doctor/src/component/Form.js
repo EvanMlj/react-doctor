@@ -19,8 +19,9 @@ const isSelecteOption = value => {
     return value !== 'Choose Department' && value !== 'Choose Doctors'
 }
 const isTime = value => {
+    if (typeof value !== 'string') return false;
     const [hour, minute] =value.split(':').map(Number);
-    return minute === 0 || minute === 30 ; 
+    return (hour >= 9 && hour < 17) && (minute === 0 || minute === 30) ; 
 }
 
 
@@ -224,8 +225,8 @@ export const Form = (props) => {
                 <div className="col-lg-6">
                     <div className="form-group">
                         {timeInputHasError && (
-                            <p className="alert alert-danger">Please select a time in 30-minute intervals</p>
-                        )}
+                            <p className="alert alert-danger">Please select an oppening hour in a interval 30-minute intervals</p>
+                        ) && (<label htmlFor="time" className="form-control alert-info">Open from 9:00 to 17:00</label>)}
                             
                         <input
                         name="time" 
@@ -238,7 +239,7 @@ export const Form = (props) => {
                         onChange={timeChangeHandler}
                         onBlur={timeBlurHandler}
                         placeholder="Time" />
-                        <label htmlfor="time" className="form-control alert-info">Open from 9:00 to 17:00</label>
+                        
                     </div>
                 </div>
                 <div className="col-lg-6">
