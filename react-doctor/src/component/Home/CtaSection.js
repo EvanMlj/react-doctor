@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../Section";
-import CountUp from 'react-countup' ; 
+import CountUp, { useCountUp } from 'react-countup';
 
 export default function CtaSection(){
     
@@ -41,12 +41,8 @@ export default function CtaSection(){
                                 <div className="counter-stat">
                                     
                                     <i className={cta.icon}></i>
-                                    <span className="h3">
-                                    <CountUp end={cta.span} />
-                                    </span>
-                                    {cta.span2}
-                                    
-                                    <p>{cta.message}</p> 
+                                    <CountUp end={cta.span} suffix={cta.span2} enableScrollSpy="true" scrollSpyDelay="500" />
+                                    <p>{cta.message}</p>
                                 </div>
                             </div>
                         ))}
